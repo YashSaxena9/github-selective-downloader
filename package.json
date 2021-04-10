@@ -1,0 +1,17 @@
+{
+  "name": "partial-repo-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Yash Saxena <yashsaxena962000@gmail.com> (https://yashsaxena9.github.io/)",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "*",
+    "path": "^0.12.7",
+    "puppeteer": "^8.0.0"
+  }
+}
