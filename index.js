@@ -130,7 +130,7 @@ async function parseTree({ url, currPath, page }) {
 
 /**
  * main function
- * opens a headless browser and calls util methods
+ * opens a browser and calls util methods
  * -- opens browser
  * -- calls to fetch tree structure of repo
  * -- calls downloder function for available files
@@ -138,6 +138,7 @@ async function parseTree({ url, currPath, page }) {
 async function main() {
   browser = await puppeteer.launch({
     headless: true,
+    // headless: false,
   });
   const [page] = await browser.pages();
   const splitLink = url.split("/");
@@ -154,12 +155,12 @@ async function main() {
   console.log(
     "---------------------------- downloading files ----------------------------"
   );
-  browser = await puppeteer.launch({
-    headless: false,
-    defaultViewport: false,
-  });
+  // browser = await puppeteer.launch({
+  //   headless: false,
+  //   defaultViewport: false,
+  // });
   await downloaderCaller(userInfo);
-  await browser.close();
+  // await browser.close();
 }
 
 
