@@ -4,11 +4,11 @@ const path = require("path");
 /**
  * terminates program in case of invalid arguments
  */
-const invalidArgs = () => {
+function invalidArgs() {
   console.error("invalid arguments passed!!");
   console.error("aborting process!!");
   process.exit(0);
-};
+}
 
 /**
  * parse thw input provided in var args while running index.js
@@ -16,7 +16,7 @@ const invalidArgs = () => {
  * NEEDED: link to github file/folder/project
  * OPTIONAL: path to download (current working directory is used by default)
  */
-const parseInput = () => {
+function parseInput() {
   const args = process.argv.slice(2);
   if (args.length === 0 || args.length > 2) {
     invalidArgs();
@@ -34,6 +34,6 @@ const parseInput = () => {
     invalidArgs();
   }
   return info;
-};
+}
 
 module.exports = { parseInput };

@@ -7,10 +7,10 @@ const prefixLink = "https://raw.githubusercontent.com";
 /**
  * add request listeners on the network tab for current page
  * when get request recieves response of data
- * the recieved data is written inside file 
+ * the recieved data is written inside file
  * (needs file path)
  */
-const addRequestListeners = ({ currPage, filePath }) => {
+function addRequestListeners({ currPage, filePath }) {
   const responses = [];
   currPage.on("response", (currRes) => {
     responses.push(currRes);
@@ -21,7 +21,7 @@ const addRequestListeners = ({ currPage, filePath }) => {
       fs.writeFileSync(filePath, buff);
     });
   });
-};
+}
 
 /**
  * downloads url using get request generated in browser
@@ -49,7 +49,6 @@ async function downloadFileUsingBrowser(args) {
     return;
   }
 }
-
 
 /**
  * downloads url using get request generated iwithout opening browser

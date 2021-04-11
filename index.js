@@ -7,12 +7,12 @@ const puppeteer = require("puppeteer");
 const { parseInput } = require("./utils/inputParser.js");
 const { downloadFile } = require("./utils/fileDownloader.js");
 
-const { url, destPath } = parseInput();   //  parsed user input
-const toDownload = [];  //  will contains download file info
-let browser;  //  global browser
+const { url, destPath } = parseInput(); //  parsed user input
+const toDownload = []; //  will contains download file info
+let browser; //  global browser
 
 /**
- * calls downloader function to download 
+ * calls downloader function to download
  * the urls present in toDownload array
  * NOTE: to optimise performance, i divided link in groups of fixed size,
  * and downloaded 1 group at a time, though
@@ -162,7 +162,6 @@ async function main() {
   await downloaderCaller(userInfo);
   // await browser.close();
 }
-
 
 /**
  * main function call
