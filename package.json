@@ -1,8 +1,11 @@
 {
-  "name": "partial-repo-downloader",
+  "name": "github-content-downloader",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "part-repo-dl": "index.js"
+  },
   "scripts": {
     "start": "node index.js"
   },
